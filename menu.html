@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>FLAPPY BIRD BY ĐÌNH RAMOS</title>
+</head>
+
+<body>
+    <div class="container">
+        <canvas id="canvas" width="288" height="512"></canvas>
+        <a href="index.html"><button id="btnStart">START</button></a>
+    </div>
+    <script>
+        const canvas = document.getElementById('canvas');
+        const c = canvas.getContext('2d');
+
+        const bird = new Image();
+        const background = new Image();
+        const foreground = new Image();
+        const name = new Image();
+
+        bird.src = "images/bird.png";
+        background.src = "images/bg.png";
+        foreground.src = "images/fg.png";
+        name.src = "images/name.PNG";
+
+        function draw() {
+            c.drawImage(background, 0, 0);
+            c.drawImage(name, 0, 0);
+            c.drawImage(foreground, 0, canvas.height - 118);
+            c.drawImage(bird, 10, canvas.height / 2);
+
+
+            requestAnimationFrame(draw);
+        }
+
+        draw();
+    </script>
+</body>
+
+</html>
